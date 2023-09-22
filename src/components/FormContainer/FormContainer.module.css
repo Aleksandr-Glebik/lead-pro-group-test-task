@@ -1,0 +1,23 @@
+.container {
+    width: 100%;
+    max-width: 1160px;
+    height: 685px;
+    padding: 100px 160px 0;
+    border-radius: 60px;
+    background-color: #FFFFFF;
+    position: relative;
+}
+
+.page {
+    position: absolute;
+    top: 110px;
+    right: 150px;
+    color: #353535;
+    font-size: 24px;
+    font-weight: 500;
+    z-index: 10;
+}
+
+.page_active {
+    color: #3D46FA;
+}

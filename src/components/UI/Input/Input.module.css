@@ -1,0 +1,123 @@
+.wrapper {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.wrapper__label {
+    font-size: 32px;
+    font-weight: 500;
+    color: #353535;
+    margin-bottom: 30px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.container__age {
+    font-size: 24px;
+    font-weight: 400;
+    color: #353535;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container__input {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+    height: 7px;
+    border-radius: 3px;
+    background: linear-gradient(to right, #4333FF, #07FFD2);
+    margin-bottom: 15px;
+}
+
+.container__input::-webkit-slider-runnable-track {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid linear-gradient(#4333FF, #07FFD2);
+}
+
+.container__input::-moz-range-track {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid linear-gradient(#4333FF, #07FFD2);
+}
+
+.container__input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(#4333FF, #07FFD2);
+    position: relative;
+    z-index: 1;
+}
+.container__input::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(#4333FF, #07FFD2);
+    position: relative;
+    z-index: 1;
+}
+
+.container__input::-webkit-slider-thumb::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 41px;
+    height: 41px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    z-index: 50;
+}
+
+.container__input::-moz-range-thumb::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 41px;
+    height: 41px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    z-index: 50;
+}
+
+.container__input:-moz-focusring{
+    outline: 1px solid white;
+    outline-offset: -1px;
+}
+
+
+
+.container__label {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container__label_text {
+    font-size: 24px;
+    font-weight: 400;
+    color: #353535;
+}
