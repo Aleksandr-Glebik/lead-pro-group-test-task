@@ -18,6 +18,7 @@ const InputRadio = () => {
                 value='male'
                 className={styles.container__input}
                 checked={sex === 'male'}
+                onChange={inputHandler}
             />
             <label htmlFor="male" className={styles.container__label}>
                 Мужской
@@ -31,6 +32,7 @@ const InputRadio = () => {
                 value='female'
                 className={styles.container__input}
                 checked={sex === 'female'}
+                onChange={inputHandler}
             />
             <label htmlFor="female" className={styles.container__label}>
                 Женский

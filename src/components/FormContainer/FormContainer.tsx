@@ -1,4 +1,5 @@
 import InputContainer from '../InputContainer/InputContainer'
+import Button from '../UI/Button/Button'
 import styles from './FormContainer.module.css'
 
 const FormContainer = () => {
@@ -9,6 +10,7 @@ const FormContainer = () => {
       </div>
       <InputContainer label='Возраст' type='range'/>
       <InputContainer label={'Пол'} type='radio'/>
+      <Button className='forward'>Далее</Button>
     </form>
   )
 }
