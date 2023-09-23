@@ -1,0 +1,16 @@
+.wrapper {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.wrapper__label {
+    font-size: 32px;
+    font-weight: 500;
+    color: #353535;
+    margin-bottom: 32px;
+}
+

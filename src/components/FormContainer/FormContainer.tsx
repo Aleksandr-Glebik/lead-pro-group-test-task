@@ -1,4 +1,4 @@
-import Input from '../UI/Input/Input'
+import InputContainer from '../InputContainer/InputContainer'
 import styles from './FormContainer.module.css'
 
 const FormContainer = () => {
@@ -7,7 +7,8 @@ const FormContainer = () => {
       <div className={styles.page}>
         <span className={styles.page_active}>1</span>/3
       </div>
-      <Input />
+      <InputContainer label='Возраст' type='range'/>
+      <InputContainer label={'Пол'} type='radio'/>
     </form>
   )
 }

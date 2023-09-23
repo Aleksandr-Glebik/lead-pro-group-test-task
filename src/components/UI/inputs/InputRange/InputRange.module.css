@@ -1,19 +1,3 @@
-.wrapper {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-.wrapper__label {
-    font-size: 32px;
-    font-weight: 500;
-    color: #353535;
-    margin-bottom: 30px;
-}
-
 .container {
     width: 100%;
     display: flex;
@@ -101,13 +85,6 @@
     background: #FFFFFF;
     z-index: 50;
 }
-
-.container__input:-moz-focusring{
-    outline: 1px solid white;
-    outline-offset: -1px;
-}
-
-
 
 .container__label {
     width: 100%;
