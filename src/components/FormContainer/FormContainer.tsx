@@ -1,16 +1,17 @@
-import InputContainer from '../InputContainer/InputContainer'
-import Button from '../UI/Button/Button'
+import FirstPage from '../../pages/FirstPage/FirstPage'
+import SecondPage from '../../pages/SecondPage/SecondPage'
+import ThirdPage from '../../pages/ThirdPage/ThirdPage'
 import styles from './FormContainer.module.css'
 
 const FormContainer = () => {
   return (
     <form className={styles.container}>
       <div className={styles.page}>
-        <span className={styles.page_active}>1</span>/3
+        <span className={styles.page_active}>3</span>/3
       </div>
-      <InputContainer label='Возраст' type='range'/>
-      <InputContainer label={'Пол'} type='radio'/>
-      <Button className='forward'>Далее</Button>
+      {/* <FirstPage /> */}
+      {/* <SecondPage /> */}
+      <ThirdPage />
     </form>
   )
 }

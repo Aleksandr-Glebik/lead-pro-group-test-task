@@ -1,0 +1,28 @@
+.textArea {
+    border: none;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    resize: none;
+
+    width: 100%;
+    min-height: 140px;
+    padding: 15px 25px;
+    border: 1px solid #E3E3E3;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 4px 0px;
+
+    font-size: 18px;
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: 0.2px;
+    color: #353535;
+}
+
+.textArea::placeholder {
+    font-size: 18px;
+    font-weight: 400;
+    color: #ADADAD;
+}
