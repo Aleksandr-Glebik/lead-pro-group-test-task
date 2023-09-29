@@ -6,7 +6,7 @@ import clsx from 'clsx'
 interface IButton {
     children: React.ReactNode
     className?: string
-    disabled: boolean
+    disabled?: boolean
 }
 
 const Button: React.FC<IButton> = ({ children, className, disabled }) => {

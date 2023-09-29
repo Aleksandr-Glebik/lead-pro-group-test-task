@@ -1,11 +1,15 @@
-import { useState } from 'react'
 import styles from './InputTextArea.module.css'
+import { useStateContext } from '../../../../rootState';
+import { ActionType } from '../../../../reducer';
 
 const InputTextArea = () => {
-  const [text, setText] = useState('')
+  const { state, dispatch } = useStateContext()
+  const { text } = state;
 
   const inputHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setText(event.target.value)
+    if (dispatch) {
+      dispatch({ type: ActionType.SET_TEXT, payload: event.target.value })
+    }
   }
 
   return (

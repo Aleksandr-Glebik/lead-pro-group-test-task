@@ -25,14 +25,14 @@ const FirstPage = () => {
         disabled={!clickable ? true : false}
       >
         {
-
           clickable ? (
             <Link to={'/2'} className={styles.link}>
               Далее
             </Link>
           ) : (
             'Далее'
-          )}
+          )
+        }
       </Button>
     </>
   );

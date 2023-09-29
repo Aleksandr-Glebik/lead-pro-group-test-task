@@ -1,3 +1,5 @@
+import { ActionType } from '../../../../reducer';
+import { useStateContext } from '../../../../rootState';
 import styles from './InputSelect.module.css'
 
 const cityList  = [
@@ -34,6 +36,14 @@ const cityList  = [
 ]
 
 const InputSelect = () => {
+    const { state, dispatch } = useStateContext()
+    const { city } = state;
+
+    const selectHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        if (dispatch) {
+            dispatch({ type: ActionType.SET_CITY, payload: event.target.value })
+        }
+    }
 
     return (
         <div className={styles.container}>
@@ -41,6 +51,8 @@ const InputSelect = () => {
                 name="city"
                 id="city"
                 className={styles.select}
+                value={city}
+                onChange={selectHandler}
             >
                 {
                     cityList.map(city => (
