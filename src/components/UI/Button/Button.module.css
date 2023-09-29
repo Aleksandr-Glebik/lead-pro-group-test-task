@@ -65,3 +65,7 @@
     border-radius: 100px;
     z-index: 10;
 }
+
+.disabled {
+    cursor: not-allowed;
+}

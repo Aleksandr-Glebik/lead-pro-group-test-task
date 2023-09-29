@@ -1,5 +1,5 @@
 import InputContainer from "../../components/InputContainer/InputContainer"
-import Button from "../../components/UI/Button/Button"
+// import Button from "../../components/UI/Button/Button"
 import styles from './ThirdPage.module.css'
 
 const ThirdPage = () => {
@@ -9,8 +9,8 @@ const ThirdPage = () => {
         <InputContainer label='Телефон' type='tel'/>
         <InputContainer type='checked'/>
         <div className={styles.btnContainer}>
-            <Button className='back'>Назад</Button>
-            <Button className='forward'>Далее</Button>
+            {/* <Button className='back'>Назад</Button> */}
+            {/* <Button className='forward'>Далее</Button> */}
         </div>
     </>
   )
