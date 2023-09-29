@@ -1,13 +1,18 @@
-import { useState } from 'react'
+
+import { ActionType } from '../../../../reducer';
+import { useStateContext } from '../../../../rootState';
 import styles from './InputText.module.css'
 
 const InputText = () => {
-  const [name, setName] = useState('')
+  const { state, dispatch } = useStateContext()
+  const { name } = state;
 
   const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setName(event.target.value)
-  }
-  
+    if (dispatch) {
+      dispatch({ type: ActionType.SET_NAME, payload: event.target.value })
+    }
+  };
+
   return (
     <input
         type='text'

@@ -1,12 +1,16 @@
-import { useState } from 'react'
+import { ActionType } from '../../../../reducer';
+import { useStateContext } from '../../../../rootState';
 import styles from './InputPhone.module.css'
 
 const InputPhone = () => {
-  const [phone, setPhone] = useState('')
+  const { state, dispatch } = useStateContext()
+  const { phone } = state;
 
   const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setPhone(event.target.value)
-  }
+    if (dispatch) {
+      dispatch({ type: ActionType.SET_PHONE, payload: event.target.value })
+    }
+  };
 
   return (
     <input

@@ -8,6 +8,7 @@ export interface IStateContext {
     text: string
     name: string
     phone: string
+    check: boolean
 }
 
 export interface Store {
@@ -21,7 +22,8 @@ const initialState: IStateContext = {
     city: '',
     text: '',
     name: '',
-    phone: ''
+    phone: '',
+    check: false
 }
 
 const MyContext = React.createContext<Store>({ state: initialState, dispatch: () => null })

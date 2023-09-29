@@ -6,7 +6,8 @@ export enum ActionType {
     SET_CITY = 'SET_CITY',
     SET_TEXT = 'SET_TEXT',
     SET_NAME = 'SET_NAME',
-    SET_PHONE = 'ET_PHONE',
+    SET_PHONE = 'SET_PHONE',
+    SET_CHECK = 'SET_CHECK',
 }
 
 export type Action =
@@ -16,6 +17,7 @@ export type Action =
  | { type: ActionType.SET_TEXT, payload: string }
  | { type: ActionType.SET_NAME, payload: string }
  | { type: ActionType.SET_PHONE, payload: string }
+ | { type: ActionType.SET_CHECK, payload: boolean }
 
  export const reducer = (state: IStateContext, action: Action): any => {
     switch (action.type) {
@@ -31,6 +33,8 @@ export type Action =
           return { ...state, name: action.payload }
         case ActionType.SET_PHONE:
           return { ...state, phone: action.payload }
+        case ActionType.SET_CHECK:
+          return { ...state, check: action.payload }
         default:
           return state
       }

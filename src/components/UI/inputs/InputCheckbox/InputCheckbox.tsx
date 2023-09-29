@@ -1,11 +1,16 @@
-import { useState } from 'react'
+
+import { ActionType } from '../../../../reducer';
+import { useStateContext } from '../../../../rootState';
 import styles from './InputCheckbox.module.css'
 
 const InputCheckbox = () => {
-  const [privacyPolicy, setPrivacyPolicy] = useState(true)
+  const { state, dispatch } = useStateContext()
+  const { check } = state;
 
   const inputHandler = () => {
-    setPrivacyPolicy(prev => !prev)
+    if (dispatch) {
+      dispatch({ type: ActionType.SET_CHECK, payload: !check })
+    }
   }
 
   return (
@@ -14,7 +19,7 @@ const InputCheckbox = () => {
             type="checkbox"
             name="privacyPolicy"
             className={styles.input}
-            checked={privacyPolicy}
+            checked={check}
             onChange={inputHandler}
         />
         <label
