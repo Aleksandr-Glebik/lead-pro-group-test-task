@@ -1,8 +1,15 @@
+import { useState } from 'react';
 import { ActionType } from '../../../../reducer';
 import { useStateContext } from '../../../../rootState';
 import styles from './InputSelect.module.css'
+import clsx from 'clsx';
+interface ICityList {
+    id: number
+    value: string
+    text: string
+}
 
-const cityList  = [
+const cityList: ICityList[]  = [
     {
         id: 1,
         value: 'minsk',
@@ -36,36 +43,62 @@ const cityList  = [
 ]
 
 const InputSelect = () => {
-    const { state, dispatch } = useStateContext()
-    const { city } = state;
+    const { dispatch } = useStateContext()
 
-    const selectHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        if (dispatch) {
-            dispatch({ type: ActionType.SET_CITY, payload: event.target.value })
+    const [currentCityId, setCurrentCityId] = useState(1)
+    const [isOpen, setIsOpen] = useState(false)
+
+    const displayListItems = (id = 1, arr: ICityList[]): ICityList[] => arr.filter(item => item.id !== id)
+
+    const findItem = (id: number, arr: ICityList[]) => arr.find(item => item.id === id)
+
+    const itemHandler = (event: React.MouseEvent<HTMLElement>) => {
+        if (event.currentTarget.dataset.id) {
+            setCurrentCityId(+event.currentTarget.dataset.id)
+            setIsOpen(false)
+
+            if (dispatch) {
+                dispatch({
+                    type: ActionType.SET_CITY,
+                    payload: findItem(+event.currentTarget.dataset.id, cityList)?.value || ''
+                })
+            }
         }
     }
 
     return (
         <div className={styles.container}>
-            <select
-                name="city"
-                id="city"
-                className={styles.select}
-                value={city}
-                onChange={selectHandler}
+            <div
+                className={clsx(
+                        styles.label,
+                        isOpen ? styles.up : ''
+                    )
+                }
+                onClick={() => setIsOpen(prev => !prev)}
+            >
+                { findItem(currentCityId, cityList)?.text}
+            </div>
+            <ul
+                className={
+                    clsx(
+                        styles.list,
+                        isOpen ? '' : styles.up
+                    )
+                }
             >
                 {
-                    cityList.map(city => (
-                        <option
+                    displayListItems(currentCityId, cityList).map(city => (
+                        <li
                             key={city.id}
-                            value={city.value}
-                            className={styles.option}
+                            className={styles.item}
+                            data-id={city.id}
+                            onClick={itemHandler}
                         >
                             { city.text }
-                        </option>
+                        </li>
                     ))
                 }
-            </select>
+            </ul>
         </div>
     )
 }

@@ -3,7 +3,7 @@ import { useStateContext } from '../../../../rootState'
 import { ActionType } from '../../../../reducer'
 import { useState } from 'react'
 import clsx from 'clsx'
-import { lengthValidator } from '../../../../utilst/lengthValidator'
+import { lengthValidator } from '../../../../utils/lengthValidator'
 
 let initialMessage = 'Поле не должно быть пустым'
 
