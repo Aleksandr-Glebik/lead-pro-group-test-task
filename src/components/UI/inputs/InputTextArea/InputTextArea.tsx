@@ -16,7 +16,7 @@ const InputTextArea = () => {
 
   const inputHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     if (event.target.value) {
-      const { message, isValid } = lengthValidator(event.target.value, 3, 30)
+      const { message, isValid } = lengthValidator(event.target.value, 3, 370)
       setInvalidMessage(message)
       setValid(isValid)
     }
