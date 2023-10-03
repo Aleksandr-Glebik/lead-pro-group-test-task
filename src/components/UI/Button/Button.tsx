@@ -18,12 +18,16 @@ const Button: React.FC<IButton> = ({ children, className, disabled }) => {
   return (
     <div className={clsx(
       styles.container,
-      className === 'forward' ? styles.hide : ''
+      className === 'forward' ? styles.hide : '',
+      className === 'send' ? styles.send : '',
+      className === 'send' ? styles.p0 : '',
     )}>
       <button
         className={clsx(
           styles.btn,
-          className === 'forward' ? styles.forward : styles.back,
+          className === 'forward' ? styles.forward : '',
+          className === 'send' ? styles.send : '',
+          className === 'back' ? styles.back : '',
           disabled === true ? styles.disabled : ''
         )}
         onClick={btnClickHandler}

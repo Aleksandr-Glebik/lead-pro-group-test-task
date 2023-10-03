@@ -12,5 +12,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.link__back {
     color: #353535;
+}
+
+.link__forward {
+    color: #FFFFFF;
 }

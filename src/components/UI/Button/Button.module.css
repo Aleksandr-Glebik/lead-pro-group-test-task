@@ -11,6 +11,7 @@
     background: linear-gradient(to left, #4333FF, #07FFD2);
     padding: 2px;
     z-index: 1;
+    color: #FFFFFF;
 
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -68,4 +69,43 @@
 
 .disabled {
     cursor: not-allowed;
+}
+
+.send {
+    width: 272px;
+    height: 70px;
+    border-radius: 100px;
+    color: #FFFFFF;
+    background: linear-gradient(to right, #4333FF, #07FFD2);
+}
+
+.send:hover {
+    background: linear-gradient(to left, #4333FF, #07FFD2);
+}
+
+.send .disabled {
+    background: linear-gradient(to right, #B2ABFF, #51FFE0);
+}
+
+.p0 {
+    padding: 0;
+}
+
+
+@media screen and (min-width: 581px) and (max-width: 768px) {
+    .container {
+        width: 219px;
+        height: 56px;
+    }
+    .btn {
+        font-size: 20px;
+    }
+    .forward {
+        width: 219px;
+        height: 56px;
+    }
+    .send {
+        width: 219px;
+        height: 56px;
+    }
 }

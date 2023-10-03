@@ -4,6 +4,7 @@ import Button from "../../components/UI/Button/Button"
 import styles from './SecondPage.module.css'
 import { Link } from "react-router-dom"
 import { useStateContext } from "../../rootState"
+import clsx from "clsx"
 
 const SecondPage = () => {
   const [clickable, setClickable] = useState(false)
@@ -22,7 +23,15 @@ const SecondPage = () => {
         <InputContainer label='Сообщение' type='textArea'/>
         <div className={styles.btnContainer}>
             <Button className='back'>
-              <Link to={'/'} className={styles.link}>
+              <Link
+                to={'/'}
+                className={
+                  clsx(
+                    styles.link,
+                    styles.link__back
+                  )
+                }
+              >
                 Назад
               </Link>
             </Button>
@@ -32,7 +41,15 @@ const SecondPage = () => {
             >
               {
                 clickable ? (
-                  <Link to={'/3'} className={styles.link}>
+                  <Link
+                    to={'/3'}
+                    className={
+                      clsx(
+                        styles.link,
+                        styles.link__forward
+                      )
+                    }
+                  >
                     Далее
                   </Link>
                 ) : (

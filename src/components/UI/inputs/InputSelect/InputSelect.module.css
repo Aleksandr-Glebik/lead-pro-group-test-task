@@ -76,3 +76,12 @@
     padding: 18px 25px;
     border-radius: 10px;
 } */
+
+@media screen and (min-width: 581px) and (max-width: 768px) {
+    .label {
+        font-size: 20px;
+    }
+    .item {
+        font-size: 20px;
+    }
+}

@@ -18,8 +18,8 @@
     background: transparent;
     margin: 0;
 
-    width: 29px;
-    height: 29px;
+    width: 24px;
+    height: 24px;
     background: linear-gradient(90deg, #4333FF, #07FFD2);
     border-radius: 3px;
     transform: rotate(45deg);
@@ -48,3 +48,14 @@
     font-weight: 400;
     color: #353535;
 }
+
+@media screen and (min-width: 581px) and (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+        gap: 17px;
+    }
+    .container__label {
+        font-size: 20px;
+    }
+}
+

@@ -1,6 +1,8 @@
 import styles from './FinishPage.module.css'
 import successIcon from '../../assets/images/successIcon.png'
-// import Button from '../../components/UI/Button/Button'
+import Button from '../../components/UI/Button/Button'
+import { Link } from "react-router-dom"
+import clsx from 'clsx'
 
 const FinishPage = () => {
   return (
@@ -15,7 +17,18 @@ const FinishPage = () => {
       <p className={styles.text}>
         Ваша заявка успешно отправлена!
       </p>
-      {/* <Button className='forward'>Закрыть</Button> */}
+      <Button className='forward'>
+        <Link
+          to={'/'}
+          className={
+            clsx(
+              styles.link
+            )
+          }
+        >
+          Назад
+        </Link>
+      </Button>
     </div>
   )
 }
