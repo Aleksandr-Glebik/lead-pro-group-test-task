@@ -31,8 +31,8 @@
 
 .container__input::before {
     content: "";
-    width: 13px;
-    height: 13px;
+    width: 11px;
+    height: 11px;
     background: #FFFFFF;
     border-radius: 3px;
     transform: rotate(45deg) scale(0);
@@ -56,6 +56,19 @@
     }
     .container__label {
         font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 580px) {
+    .wrapper {
+        flex-direction: column;
+        gap: 14px;
+    }
+    .container__label {
+        font-size: 16px;
+    }
+    .container {
+        margin-left: 5px;
     }
 }
 

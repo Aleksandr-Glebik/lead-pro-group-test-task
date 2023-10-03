@@ -20,20 +20,22 @@ const FirstPage = () => {
     <>
       <InputContainer label="Возраст" type="range" />
       <InputContainer label={'Пол'} type="radio" />
-      <Button
-        className="forward"
-        disabled={!clickable ? true : false}
-      >
-        {
-          clickable ? (
-            <Link to={'/2'} className={styles.link}>
-              Далее
-            </Link>
-          ) : (
-            'Далее'
-          )
-        }
-      </Button>
+      <div className={styles.btnContainer}>
+        <Button
+          className="forward"
+          disabled={!clickable ? true : false}
+          >
+          {
+            clickable ? (
+              <Link to={'/2'} className={styles.link}>
+                Далее
+              </Link>
+            ) : (
+              'Далее'
+              )
+            }
+        </Button>
+      </div>
     </>
   );
 };

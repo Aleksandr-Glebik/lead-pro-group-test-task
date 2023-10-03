@@ -17,3 +17,10 @@
   align-items: center;
 }
 
+@media screen and (min-width: 320px) and (max-width: 580px) {
+  .wrapper {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+

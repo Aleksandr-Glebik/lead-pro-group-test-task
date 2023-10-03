@@ -64,3 +64,16 @@
         top: -24px;
     }
 }
+
+@media screen and (min-width: 320px) and (max-width: 580px) {
+    .textArea {
+        font-size: 13px;
+    }
+    .textArea::placeholder {
+        font-size: 13px;
+    }
+    .invalidMessage {
+        font-size: 13px;
+        top: -20px;
+    }
+}

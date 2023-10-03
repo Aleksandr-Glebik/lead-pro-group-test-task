@@ -21,3 +21,11 @@
 .link__forward {
     color: #FFFFFF;
 }
+
+@media screen and (min-width: 320px) and (max-width: 580px) {
+    .btnContainer {
+        flex-direction: column;
+        gap: 15px;
+        align-self: flex-end;
+    }
+}

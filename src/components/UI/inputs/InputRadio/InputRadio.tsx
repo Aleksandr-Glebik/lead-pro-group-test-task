@@ -42,7 +42,6 @@ const InputRadio = () => {
           Женский
         </label>
       </div>
-      {sex}
     </div>
   );
 };

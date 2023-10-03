@@ -85,3 +85,20 @@
         font-size: 20px;
     }
 }
+
+@media screen and (min-width: 320px) and (max-width: 580px) {
+    .label {
+        font-size: 16px;
+    }
+    .label::after {
+        width: 13px;
+        height: 7px;
+        background-size: cover;
+    }
+    .list {
+        top: 60px;
+    }
+    .item {
+        font-size: 16px;
+    }
+}
