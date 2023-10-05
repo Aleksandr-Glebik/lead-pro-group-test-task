@@ -1,0 +1,52 @@
+.root {
+    padding: 100px;
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+
+    span {
+        font-size: 50px;
+    }
+}
+
+.text {
+    font-size: 22px;
+}
+
+.btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.notFoundBtn {
+    width: 250px;
+    padding: 15px 12px ;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: -0.56px;
+    color: #fff;
+    white-space: nowrap;
+    background: linear-gradient(to right, #4333FF, #07FFD2);
+    border-radius: 24px;
+    align-self: flex-end;
+    transition: all ease-in-out 0.35s;
+    margin-top: 40px;
+
+    &:focus {
+        border: 1px solid #fff;
+        background: linear-gradient(to left, #4333FF, #07FFD2);
+        color: #fff;
+    }
+    &:hover {
+        border: 1px solid #fff;
+        background: linear-gradient(to left, #4333FF, #07FFD2);
+        color: #fff;
+    }
+    &:active {
+        border: 1px solid #fff;
+        background: linear-gradient(to left, #4333FF, #07FFD2);
+        color: #fff;
+    }
+}
