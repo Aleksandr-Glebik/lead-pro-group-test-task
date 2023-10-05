@@ -1,15 +1,19 @@
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { clsx } from "clsx"
+import { useStateContext } from "../../rootState"
 import InputContainer from "../../components/InputContainer/InputContainer"
 import Button from "../../components/UI/Button/Button"
 import styles from './ThirdPage.module.css'
-import { useStateContext } from "../../rootState"
-import { clsx } from "clsx"
+import isLoadingIconSrc from '../../assets/images/loadingIconBtn.png'
+import { ActionType } from "../../reducer"
 
 const ThirdPage = () => {
   const [clickable, setClickable] = useState(false)
-  const { state } = useStateContext()
+  const { state, dispatch } = useStateContext()
   const { name, phone, check } = state
+  const [isLoading, setIsLoading] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (name && phone && check ) {
@@ -19,6 +23,22 @@ const ThirdPage = () => {
       setClickable(false)
     }
   }, [name, phone, check ])
+
+  const sendHandler = () => {
+    setIsLoading(true)
+
+    // setTimeout - emulate send form (here may be fetch method post)
+    setTimeout(() => {
+      setIsLoading(false)
+
+      // reset state
+      if (dispatch) {
+        dispatch({ type: ActionType.RESET_STATE })
+      }
+
+      navigate('/result')
+    }, 3000);
+  }
 
   return (
     <>
@@ -35,7 +55,7 @@ const ThirdPage = () => {
                     styles.link__back
                   )
                 }
-              >
+                >
                 Назад
               </Link>
             </Button>
@@ -45,16 +65,29 @@ const ThirdPage = () => {
             >
               {
                 clickable ? (
-                  <Link
-                    to={'/result'}
-                  className={
-                    clsx(
-                      styles.link,
-                      styles.link__forward
-                    )
-                  }>
-                    Отправить заявку
-                  </Link>
+                  <>
+                    <img
+                      src={isLoadingIconSrc}
+                      alt="loading_icon"
+                      className={
+                        clsx(
+                          isLoading ? styles.isLoading : styles.hide
+                        )
+                      }
+                    />
+                    <span
+                      className={
+                            clsx(
+                              styles.link,
+                              styles.link__forward,
+                              isLoading ? styles.flexStart : ''
+                            )
+                      }
+                      onClick={sendHandler}
+                    >
+                      Отправить заявку
+                    </span>
+                  </>
                 ) : (
                   'Отправить заявку'
                 )

@@ -1,4 +1,4 @@
-import { IStateContext } from './rootState';
+import { IStateContext, initialState } from './rootState';
 
 export enum ActionType {
     SET_AGE = 'SET_AGE',
@@ -8,6 +8,7 @@ export enum ActionType {
     SET_NAME = 'SET_NAME',
     SET_PHONE = 'SET_PHONE',
     SET_CHECK = 'SET_CHECK',
+    RESET_STATE = 'RESET_STATE',
 }
 
 export type Action =
@@ -18,6 +19,7 @@ export type Action =
  | { type: ActionType.SET_NAME, payload: string }
  | { type: ActionType.SET_PHONE, payload: string }
  | { type: ActionType.SET_CHECK, payload: boolean }
+ | { type: ActionType.RESET_STATE }
 
  export const reducer = (state: IStateContext, action: Action): any => {
     switch (action.type) {
@@ -35,6 +37,8 @@ export type Action =
           return { ...state, phone: action.payload }
         case ActionType.SET_CHECK:
           return { ...state, check: action.payload }
+        case ActionType.RESET_STATE:
+          return { ...initialState }
         default:
           return state
       }

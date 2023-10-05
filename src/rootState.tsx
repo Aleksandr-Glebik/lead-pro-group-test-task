@@ -16,7 +16,7 @@ export interface Store {
     dispatch?: React.Dispatch<Action>
 }
 
-const initialState: IStateContext = {
+export const initialState: IStateContext = {
     age: '',
     sex: '',
     city: '',
