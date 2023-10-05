@@ -71,6 +71,11 @@
 .item:hover {
     color: #3D46FA;
 }
+
+.currentIteMLabelStyle {
+    display: inline-block;
+    width: 100%;
+}
 /*
 .select .option {
     padding: 18px 25px;

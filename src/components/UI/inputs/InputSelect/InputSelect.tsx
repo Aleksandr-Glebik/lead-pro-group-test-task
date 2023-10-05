@@ -66,6 +66,15 @@ const InputSelect = () => {
         }
     }
 
+    const dispatchCurrentCity = () => {
+        if (dispatch) {
+            dispatch({
+                type: ActionType.SET_CITY,
+                payload: findItem(currentCityId, cityList)?.value || ''
+            })
+        }
+    }
+
     return (
         <div className={styles.container}>
             <div
@@ -76,7 +85,14 @@ const InputSelect = () => {
                 }
                 onClick={() => setIsOpen(prev => !prev)}
             >
-                { findItem(currentCityId, cityList)?.text}
+                {
+                    <span
+                        onClick={dispatchCurrentCity}
+                        className={styles.currentIteMLabelStyle}
+                    >
+                        {findItem(currentCityId, cityList)?.text}
+                    </span>
+                }
             </div>
             <ul
                 className={
