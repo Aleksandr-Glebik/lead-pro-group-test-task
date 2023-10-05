@@ -10,6 +10,7 @@ import InputCheckbox from '../UI/inputs/InputCheckbox/InputCheckbox'
 interface InputContainerProps {
   label?: string
   type: 'range' | 'radio' | 'select' | 'textArea' | 'text' | 'tel' | 'checked'
+  style?: any
 }
 
 const InputContainer: React.FC<InputContainerProps> = ({ label, type }) => {

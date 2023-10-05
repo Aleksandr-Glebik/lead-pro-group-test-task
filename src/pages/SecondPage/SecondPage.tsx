@@ -18,9 +18,16 @@ const SecondPage = () => {
   }, [city, text])
 
   return (
-    <>
-        <InputContainer label='Город' type='select'/>
-        <InputContainer label='Сообщение' type='textArea'/>
+    <div>
+        <InputContainer label='Город' type='select' style={{
+          position: 'relative',
+          zIndex: '1000 !important'
+        }}/>
+        <div className={styles.gap}></div>
+        <InputContainer label='Сообщение' type='textArea' style={{
+          position: 'relative',
+          zIndex: '10 !important'
+        }}/>
         <div className={styles.btnContainer}>
             <Button className='back'>
               <Link
@@ -58,7 +65,7 @@ const SecondPage = () => {
               }
             </Button>
         </div>
-    </>
+    </div>
   )
 }
 

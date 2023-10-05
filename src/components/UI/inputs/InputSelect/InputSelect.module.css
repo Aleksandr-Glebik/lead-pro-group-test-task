@@ -50,7 +50,8 @@
     border: 1px solid #E3E3E3;
     border-radius: 0 0 10px 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 4px 0px;
-    z-index: 1000;
+    background: #FFFFFF;
+    /* z-index: 1000; */
 }
 
 .list.up {
@@ -66,7 +67,7 @@
     padding: 0 25px;
     margin: 18px 0;
     position: relative;
-    z-index: 1000;
+    /* z-index: 1000; */
 }
 .item:hover {
     color: #3D46FA;
