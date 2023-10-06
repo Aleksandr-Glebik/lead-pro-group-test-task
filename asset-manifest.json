@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/lead-pro-group-test-task/static/css/main.97444d72.css",
+    "main.js": "/lead-pro-group-test-task/static/js/main.830a0e8f.js",
+    "static/media/background.png": "/lead-pro-group-test-task/static/media/background.bdef8309e1a2f30a709f.png",
+    "index.html": "/lead-pro-group-test-task/index.html",
+    "main.97444d72.css.map": "/lead-pro-group-test-task/static/css/main.97444d72.css.map",
+    "main.830a0e8f.js.map": "/lead-pro-group-test-task/static/js/main.830a0e8f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.97444d72.css",
+    "static/js/main.830a0e8f.js"
+  ]
+}
