@@ -6,7 +6,7 @@ import { useStateContext } from '../../../../rootState';
 import styles from './InputText.module.css'
 
 let invalidMessage = 'Введите имя'
-const regex = new RegExp(`^[a-zA-Z][a-zA-Z0-9-_\\.]{3,70}$`)
+const regex = new RegExp(`^[A-Za-zА-Яа-яёЁ]+(?:[-'\\s][A-Za-zА-Яа-яёЁ]+)*$`)
 
 const InputText = () => {
   const { state, dispatch } = useStateContext()
